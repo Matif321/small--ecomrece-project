@@ -1,0 +1,52 @@
+.wishlist-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* Header Section */
+.wishlist-header {
+  margin-bottom: 50px;
+}
+
+.wishlist-title {
+  color: #d17a4d;
+  /* Muted orange from image */
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.wishlist-subtitle {
+  color: #d17a4d;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Grid Layout */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* slightly wider for premium feel */
+  gap: 30px;
+  /* justify-items: center; removed to let cards fill width if needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* consistent with other pages */
+  }
+}

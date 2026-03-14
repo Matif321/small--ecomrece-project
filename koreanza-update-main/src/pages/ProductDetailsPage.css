@@ -1,0 +1,366 @@
+/* Main Container */
+.product-details-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    font-family: 'Inter', sans-serif;
+    /* Assuming Inter or similar sans-serif */
+}
+
+/* --- Top Section: Product Main Content --- */
+.product-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+/* Image Section */
+.product-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    /* Limit width */
+    aspect-ratio: 1/1;
+    /* Square */
+    background: #ffffff;
+    border-radius: 20px;
+    /* Match --card-radius */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    /* Match --card-shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wishlist-btn-large {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-product-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* Product Info Section */
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.product-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.product-price-row {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.price-label {
+    color: #666;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.price-value {
+    font-weight: 500;
+    color: #000;
+}
+
+.product-rating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 2rem;
+}
+
+/* Stock Status */
+.stock-status {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.in-stock {
+    color: #2e7d32;
+}
+
+.out-of-stock {
+    color: #d32f2f;
+}
+
+/* Product Meta Section */
+.product-meta-details {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #fdfdfd;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #444;
+    min-width: 90px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-value {
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Quantity Selector */
+.product-quantity-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quantity-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.2rem;
+}
+
+.quantity-selector button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.quantity-selector span {
+    padding: 0 1rem;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.product-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.buy-now-btn,
+.add-to-cart-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.buy-now-btn {
+    background: #fff;
+    border: 1px solid #ffccbc;
+    /* Light peach/orange border */
+    color: #ff7043;
+    /* Orange text */
+}
+
+.buy-now-btn:hover {
+    background: #fff5f2;
+}
+
+.add-to-cart-btn {
+    background: #fff;
+    border: 1px solid #eee;
+    color: #333;
+}
+
+.add-to-cart-btn:hover {
+    background: #f9f9f9;
+    border-color: #ddd;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #ff7043;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+/* Description */
+.product-description-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.product-description-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.truncated-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.lorem-text {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* --- Perfect Pairings Section --- */
+.perfect-pairings-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.pairings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.pairing-card {
+    cursor: pointer;
+    text-align: left;
+}
+
+.pairing-image-wrapper {
+    position: relative;
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    /* height: 250px; As per design images look tall */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pairing-image-wrapper img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.pairing-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.pairing-card:hover .pairing-actions {
+    opacity: 1;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.pairing-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.pairing-price-row {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.pairing-rating {
+    display: flex;
+    gap: 2px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .product-main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .pairings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

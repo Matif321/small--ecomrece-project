@@ -1,0 +1,277 @@
+{
+  "info": {
+    "name": "Koreanza Backend API",
+    "description": "Backend API for Koreanza - Korean Beauty Products E-commerce Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        },
+        "description": "Check if the API is running"
+      }
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"]
+            },
+            "description": "Get all products with optional filters"
+          }
+        },
+        {
+          "name": "Get Products by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/category/Skincare",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "category", "Skincare"]
+            },
+            "description": "Get products filtered by category"
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1"]
+            },
+            "description": "Get a single product by ID"
+          }
+        },
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/search?q=serum",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "serum"
+                }
+              ]
+            },
+            "description": "Search products by name or description"
+          }
+        },
+        {
+          "name": "Get Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/categories",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "categories"]
+            },
+            "description": "Get all product categories"
+          }
+        },
+        {
+          "name": "Get Products with Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?category=Skincare&sort=price_asc&limit=5",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Skincare"
+                },
+                {
+                  "key": "sort",
+                  "value": "price_asc",
+                  "description": "Options: price_asc, price_desc, name_asc, newest"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "Get products with filters and pagination"
+          }
+        },
+        {
+          "name": "Create Product (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "New Test Product",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "Skincare",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "Rs 999",
+                  "type": "text"
+                },
+                {
+                  "key": "original_price",
+                  "value": "Rs 1299",
+                  "type": "text"
+                },
+                {
+                  "key": "stock",
+                  "value": "50",
+                  "type": "text"
+                },
+                {
+                  "key": "finish",
+                  "value": "Matte",
+                  "type": "text"
+                },
+                {
+                  "key": "skin_type",
+                  "value": "All Skin Types",
+                  "type": "text"
+                },
+                {
+                  "key": "benefits",
+                  "value": "Hydrating, Nourishing",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "A great test product for demo",
+                  "type": "text"
+                },
+                {
+                  "key": "how_to_use",
+                  "value": "Apply to face and massage gently",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"]
+            },
+            "description": "Create a new product (supports image upload)"
+          }
+        },
+        {
+          "name": "Update Product (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Updated Product Name",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "Rs 1099",
+                  "type": "text"
+                },
+                {
+                  "key": "stock",
+                  "value": "45",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": [],
+                  "description": "Optional: upload new image"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1"]
+            },
+            "description": "Update an existing product by ID"
+          }
+        },
+        {
+          "name": "Update Stock (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock\": 100\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/1/stock",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1", "stock"]
+            },
+            "description": "Update product stock quantity"
+          }
+        },
+        {
+          "name": "Delete Product (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1"]
+            },
+            "description": "Delete a product by ID"
+          }
+        }
+      ]
+    }
+  ]
+}

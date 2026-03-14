@@ -1,0 +1,139 @@
+.footer-container {
+  background-color: #f1e9df;
+  /* The cream/beige background from your image */
+  padding: 60px 40px 20px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #000;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Brand/Subscription Column */
+.brand-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.subscribe-text {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.input-container input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 15px;
+  border: none;
+  background-color: #d9dee1;
+  /* Light grey input background */
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.social-icons img {
+  height: 24px;
+  width: auto;
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: #d17a4d;
+}
+
+.social-icon-link svg,
+.social-icon-link img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.payment-icons img {
+  height: 25px;
+  filter: grayscale(0.2);
+}
+
+/* Links Columns */
+.footer-links-grid {
+  display: flex;
+  flex: 3;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: none;
+  /* Matches the casing in your image */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  font-size: 13px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Bottom Copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .footer-links-grid {
+    flex-wrap: wrap;
+  }
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+  color: #d17a4d;
+}
