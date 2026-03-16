@@ -85,7 +85,8 @@ const Newarrival = () => {
 
   // Target IDs for "All Products" section in New Arrival
   const targetIds = [21, 26, 8, 10];
-  const topBeautyProducts = products.filter(p => targetIds.includes(p.id));
+  let topBeautyProducts = products.filter(p => targetIds.includes(p.id) || targetIds.includes(Number(p.id)));
+  if (topBeautyProducts.length === 0) topBeautyProducts = products.slice(0, 8);
 
   if (productsLoading) {
     return (

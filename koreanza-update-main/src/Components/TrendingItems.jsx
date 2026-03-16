@@ -84,11 +84,13 @@ const TrendingItems = () => {
 
   /* FIRST ROW - Trending Items (IDs from original) */
   const trendingIds = [9, 7, 24, 12];
-  const trendingProducts = products.filter(p => trendingIds.includes(p.id));
+  let trendingProducts = products.filter(p => trendingIds.includes(p.id) || trendingIds.includes(Number(p.id)));
+  if (trendingProducts.length === 0) trendingProducts = products.slice(0, 4);
 
   /* SECOND ROW - Top Beauty Products (IDs from original) */
   const topBeautyIds = [30, 23, 8, 5];
-  const topBeautyProducts = products.filter(p => topBeautyIds.includes(p.id));
+  let topBeautyProducts = products.filter(p => topBeautyIds.includes(p.id) || topBeautyIds.includes(Number(p.id)));
+  if (topBeautyProducts.length === 0) topBeautyProducts = products.slice(4, 8).length > 0 ? products.slice(4, 8) : products.slice(0, 4);
 
   if (productsLoading) {
     return (
